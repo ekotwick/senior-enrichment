@@ -1,7 +1,8 @@
 import {
 	CREATE_STUDENT,
-	EDIT_STUDENT,
-	DELETE_STUDENT
+	UPDATE_STUDENT,
+	DELETE_STUDENT,
+	SET_STUDENTS
 } from '../constants';
 
 const initialState = {
@@ -20,11 +21,16 @@ export default function (state=initialState, action) {
 			newState.listedStudents // =;
 			break;
 
-		case EDIT_STUDENT:
+		case UPDATE_STUDENT:
 			newState.selectedStudent // =;
 			break;
 
 		case DELETE_STUDENT: 
+			newState.selectedStudent // =;
+			newState.listedStudents // =;
+			break;
+
+		case SET_STUDENTS: 
 			newState.selectedStudent // =;
 			newState.listedStudents // =;
 			break;
@@ -35,6 +41,6 @@ export default function (state=initialState, action) {
 	}
 
 	return newState;
-	
+
 }
 

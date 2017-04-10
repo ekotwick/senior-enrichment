@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 var Sequelize = require('sequelize');
 var db = require('../index.js');
@@ -43,6 +43,14 @@ const Student = db.define('student',{
 },{
 	getterMethods: {
 		fullname: function(){
+			if (this.middlename.length) {
+				return `${this.firstname} ${this.middlename.join(' ')} ${this.lastname}`;
+			}
+			return `${this.firstname} ${this.lastname}`;
+		}
+	},
+	instanceMethods: {
+		nameWithInitials: function(){
 			let mName = '';
 			if (this.middlename.length) {
 				mName = this.middlename.map(name => `${name[0]}.`).join(' ');
