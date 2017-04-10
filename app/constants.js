@@ -1,0 +1,7 @@
+export const CREATE_CAMPUS = 'CREATE_CAMPUS';
+export const EDIT_CAMPUS = 'EDIT_CAMPUS';
+export const DELETE_CAMPUS = 'DELETE_CAMPUS';
+
+export const CREATE_STUDENT = 'CREATE_STUDENT';
+export const EDIT_STUDENT = 'EDIT_STUDENT';
+export const DELETE_STUDENT = 'DELETE_STUDENT';
