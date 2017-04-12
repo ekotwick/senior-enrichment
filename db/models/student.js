@@ -8,17 +8,17 @@ const Student = db.define('student',{
 	firstname: {
 		type: Sequelize.STRING,
 		allowNull: false,
-		validate: {
-			is: /^[a-z]+$/i
-		}
+		// validate: {
+		// 	is: /^[A-Za-z]+$/i
+		// }
 	},
 
 	middlename: {
 		type: Sequelize.ARRAY(Sequelize.STRING),
 		allowNull: true,
-		validate: {
-			is: /^[a-z]+$/i
-		},
+		// validate: {
+		// 	is: /^[A-Za-z]+$/i
+		// },
 		set: function(val){
 			this.setDataValue('middlename', val.split(' '));
 		}
@@ -27,9 +27,9 @@ const Student = db.define('student',{
 	lastname: {
 		type: Sequelize.STRING,
 		allowNull: false,
-		validate: {
-			is: /^[a-z]+$/i
-		}
+		// validate: {
+		// 	is: /^[A-Za-z]+$/i
+		// }
 	},
 
 	email: {
@@ -63,5 +63,4 @@ const Student = db.define('student',{
 	}
 });
 
-// export default Student;
 module.exports = Student;

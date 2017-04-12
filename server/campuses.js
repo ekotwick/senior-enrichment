@@ -1,13 +1,15 @@
 'use strict';
 const campuses = require('express').Router();
-const Campus = require('../db').Campus;
-const Student = require('../db').Student;
+const Campus = require('../db/models').Campus;
+const Student = require('../db/models').Student;
 
+// utility function to field errenous queries
 const errors = function(str, code) {
 	const err = new Error(str);
 	err.status = code;
 	throw err;
 };
+// custome error messages for errenous queries; pairs with utility function above
 const invalidId = 'Invalid campus id';
 const noCampuses = 'No campuses found';
 
@@ -39,6 +41,9 @@ campuses.get('/', (req, res, next) => {
 });
 
 campuses.post('/', (req, res, next) => {
+	console.log(Campus);
+	console.log(typeof Campus);	
+	console.log(req.body);
 	Campus.create(req.body)
 		.then(created => res.status(201).json(created))
 		.catch(next);

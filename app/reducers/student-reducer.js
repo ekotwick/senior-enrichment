@@ -5,9 +5,42 @@ import {
 	SET_STUDENTS
 } from '../constants';
 
+const hardCodedStudents = [
+	{
+		firstname: 'Hulk',
+		middlename: '',
+		lastname: 'Hogan',
+		email: 'hh@w.com'
+	},
+	{
+		firstname: 'Stone',
+		middlename: 'Cold Steve',
+		lastname: 'Austin',
+		email: 'scsa@w.com'
+	},
+	{
+		firstname: 'Macho',
+		middlename: 'Man Randy',
+		lastname: 'Savage',
+		email: 'mmrs@w.com'
+	},
+	{
+		firstname: 'Ric',
+		middlename: '',
+		lastname: 'Flair',
+		email: 'rf@w.com'
+	},
+	{
+		firstname: 'The',
+		middlename: 'Ultimate',
+		lastname: 'Warrior',
+		email: 'tuw@w.com'
+	}
+];
+
 const initialState = {
 	selectedStudent: {},
-	listedStudents: []
+	listedStudents: hardCodedStudents
 };
 
 export default function (state=initialState, action) {
@@ -18,7 +51,7 @@ export default function (state=initialState, action) {
 
 		case CREATE_STUDENT:
 			newState.selectedStudent // =;
-			newState.listedStudents // =;
+			newState.listedStudents = newState.listedStudents.concat(action.student)
 			break;
 
 		case UPDATE_STUDENT:
@@ -32,7 +65,7 @@ export default function (state=initialState, action) {
 
 		case SET_STUDENTS: 
 			newState.selectedStudent // =;
-			newState.listedStudents // =;
+			newState.listedStudents = newState.listedStudents.concat(action.students);
 			break;
 
 		default: 

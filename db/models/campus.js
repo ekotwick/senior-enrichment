@@ -13,12 +13,11 @@ const Campus = db.define('campus', {
 	image: {
 		type: Sequelize.STRING,
 		allowNull: false,
-		validate: {
-			isUrl: true
-		}
+		// validate: {
+		// 	isUrl: true
+		// }
 	}
 
 },{});
 
-// export default Campus;
 module.exports = Campus;
